@@ -1,0 +1,15 @@
+<list>
+  <br.com.fox.util.Config>
+    <pathRouterSnapshot>\\192.168.0.109\Router_Alarmes</pathRouterSnapshot>
+    <pathDestSnapshot>\\192.168.0.69\H2 Server Gravação\Seegate 2.0\snapshot</pathDestSnapshot>
+    <smtpHostEmail>smtp.hotmail.com</smtpHostEmail>
+    <smtpPortEmail>25</smtpPortEmail>
+    <userEmail>felipek9999@hotmail.com</userEmail>
+    <passEmail>admin1015skate!</passEmail>
+    <hostFTP>192.168.0.69</hostFTP>
+    <portaFTP>2121</portaFTP>
+    <userFTP>anonymous</userFTP>
+    <passFTP></passFTP>
+    <pathDestFTP></pathDestFTP>
+  </br.com.fox.util.Config>
+</list>

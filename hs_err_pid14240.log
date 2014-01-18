@@ -1,0 +1,356 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x770e8e19, pid=14240, tid=12296
+#
+# JRE version: 7.0_03-b05
+# Java VM: Java HotSpot(TM) Client VM (22.1-b02 mixed mode, sharing windows-x86 )
+# Problematic frame:
+# C  [ntdll.dll+0x38e19]
+#
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.sun.com/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x04e10400):  JavaThread "AWT-EventQueue-0" [_thread_in_native, id=12296, stack(0x05800000,0x05850000)]
+
+siginfo: ExceptionCode=0xc0000005, writing address 0x00000014
+
+Registers:
+EAX=0x00000000, EBX=0xfffffffc, ECX=0x00000000, EDX=0x00000004
+ESP=0x0584e1e4, EBP=0x0584e234, ESI=0x081c3f78, EDI=0x081c3f7c
+EIP=0x770e8e19, EFLAGS=0x00210213
+
+Top of Stack: (sp=0x0584e1e4)
+0x0584e1e4:   081c3f78 081c3f7c 081c3f78 04e10400
+0x0584e1f4:   3ba1f188 0584e20c 60af6e04 00000000
+0x0584e204:   04e10400 2779f2d8 00000000 0253d06f
+0x0584e214:   02452ccc ffff027f 00000000 00000000
+0x0584e224:   00000000 00000000 7ef85000 0000056c
+0x0584e234:   0584e25c 770e8d28 00000000 00000000
+0x0584e244:   081c3f78 0584e3a0 081c3f58 00000004
+0x0584e254:   00000000 00000001 0584e2d8 6031a5b0 
+
+Instructions: (pc=0x770e8e19)
+0x770e8df9:   c2 8b d8 8b c1 f0 0f b1 1f 3b c1 0f 85 58 fe ff
+0x770e8e09:   ff 33 c0 89 45 0c 89 45 08 8b 06 83 f8 ff 74 03
+0x770e8e19:   ff 40 14 8b 5d f4 8b 7d f0 80 3d 82 03 fe 7f 00
+0x770e8e29:   0f 85 da 99 04 00 8b 45 fc 57 6a 00 83 f8 ff 0f 
+
+
+Register to memory mapping:
+
+EAX=0x00000000 is an unknown value
+EBX=0xfffffffc is an unknown value
+ECX=0x00000000 is an unknown value
+EDX=0x00000004 is an unknown value
+ESP=0x0584e1e4 is pointing into the stack for thread: 0x04e10400
+EBP=0x0584e234 is pointing into the stack for thread: 0x04e10400
+ESI=0x081c3f78 is an unknown value
+EDI=0x081c3f7c is an unknown value
+
+
+Stack: [0x05800000,0x05850000],  sp=0x0584e1e4,  free space=312k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [ntdll.dll+0x38e19]  RtlIntegerToUnicodeString+0x2fc
+C  [ntdll.dll+0x38d28]  RtlIntegerToUnicodeString+0x20b
+C  [libvlccore.dll+0x9a5b0]  vlc_mutex_lock+0x80
+C  [jna7545391974327418743.dll+0xce92]  Java_com_sun_jna_Native_initialize_1ffi_1type+0x3542
+C  [jna7545391974327418743.dll+0x2dde]
+C  [jna7545391974327418743.dll+0x53ae]  Java_com_sun_jna_Native_invokeVoid+0x2e
+j  com.sun.jna.Native.invokeVoid(JI[Ljava/lang/Object;)V+0
+j  com.sun.jna.Function.invoke([Ljava/lang/Object;Ljava/lang/Class;Z)Ljava/lang/Object;+48
+J  com.sun.jna.Function.invoke(Ljava/lang/Class;[Ljava/lang/Object;Ljava/util/Map;)Ljava/lang/Object;
+j  $Proxy0.libvlc_media_player_stop(Luk/co/caprica/vlcj/binding/internal/libvlc_media_player_t;)V+16
+j  uk.co.caprica.vlcj.player.DefaultMediaPlayer.stop()V+17
+j  br.com.fox.view.View$2.windowClosing(Ljava/awt/event/WindowEvent;)V+7
+j  java.awt.Window.processWindowEvent(Ljava/awt/event/WindowEvent;)V+68
+j  javax.swing.JFrame.processWindowEvent(Ljava/awt/event/WindowEvent;)V+2
+j  java.awt.Window.processEvent(Ljava/awt/AWTEvent;)V+69
+j  java.awt.Component.dispatchEventImpl(Ljava/awt/AWTEvent;)V+581
+j  java.awt.Container.dispatchEventImpl(Ljava/awt/AWTEvent;)V+42
+j  java.awt.Window.dispatchEventImpl(Ljava/awt/AWTEvent;)V+19
+j  java.awt.Component.dispatchEvent(Ljava/awt/AWTEvent;)V+2
+j  java.awt.EventQueue.dispatchEventImpl(Ljava/awt/AWTEvent;Ljava/lang/Object;)V+41
+j  java.awt.EventQueue.access$000(Ljava/awt/EventQueue;Ljava/awt/AWTEvent;Ljava/lang/Object;)V+3
+j  java.awt.EventQueue$3.run()Ljava/lang/Void;+12
+j  java.awt.EventQueue$3.run()Ljava/lang/Object;+1
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0x123c0a]
+V  [jvm.dll+0x1c9e8e]
+V  [jvm.dll+0x123c8d]
+V  [jvm.dll+0xd404a]
+C  [java.dll+0x102f]  Java_java_security_AccessController_doPrivileged__Ljava_security_PrivilegedAction_2Ljava_security_AccessControlContext_2+0x17
+j  java.security.ProtectionDomain$1.doIntersectionPrivilege(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;Ljava/security/AccessControlContext;)Ljava/lang/Object;+28
+j  java.security.ProtectionDomain$1.doIntersectionPrivilege(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;+6
+j  java.awt.EventQueue$4.run()Ljava/lang/Void;+11
+j  java.awt.EventQueue$4.run()Ljava/lang/Object;+1
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0x123c0a]
+V  [jvm.dll+0x1c9e8e]
+V  [jvm.dll+0x123c8d]
+V  [jvm.dll+0xd404a]
+C  [java.dll+0x102f]  Java_java_security_AccessController_doPrivileged__Ljava_security_PrivilegedAction_2Ljava_security_AccessControlContext_2+0x17
+j  java.security.ProtectionDomain$1.doIntersectionPrivilege(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;Ljava/security/AccessControlContext;)Ljava/lang/Object;+28
+j  java.awt.EventQueue.dispatchEvent(Ljava/awt/AWTEvent;)V+73
+j  java.awt.EventDispatchThread.pumpOneEventForFilters(I)Z+245
+j  java.awt.EventDispatchThread.pumpEventsForFilter(ILjava/awt/Conditional;Ljava/awt/EventFilter;)V+35
+j  java.awt.EventDispatchThread.pumpEventsForHierarchy(ILjava/awt/Conditional;Ljava/awt/Component;)V+11
+j  java.awt.EventDispatchThread.pumpEvents(ILjava/awt/Conditional;)V+4
+j  java.awt.EventDispatchThread.pumpEvents(Ljava/awt/Conditional;)V+3
+j  java.awt.EventDispatchThread.run()V+9
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0x123c0a]
+V  [jvm.dll+0x1c9e8e]
+V  [jvm.dll+0x123df3]
+V  [jvm.dll+0x123e57]
+V  [jvm.dll+0xcd90f]
+V  [jvm.dll+0x14394f]
+V  [jvm.dll+0x1720b9]
+C  [msvcr100.dll+0x5c6de]  endthreadex+0x3a
+C  [msvcr100.dll+0x5c788]  endthreadex+0xe4
+C  [kernel32.dll+0x1336a]  BaseThreadInitThunk+0x12
+C  [ntdll.dll+0x39f72]  RtlInitializeExceptionChain+0x63
+C  [ntdll.dll+0x39f45]  RtlInitializeExceptionChain+0x36
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  com.sun.jna.Native.invokeVoid(JI[Ljava/lang/Object;)V+0
+j  com.sun.jna.Function.invoke([Ljava/lang/Object;Ljava/lang/Class;Z)Ljava/lang/Object;+48
+J  com.sun.jna.Function.invoke(Ljava/lang/Class;[Ljava/lang/Object;Ljava/util/Map;)Ljava/lang/Object;
+j  com.sun.jna.Library$Handler.invoke(Ljava/lang/Object;Ljava/lang/reflect/Method;[Ljava/lang/Object;)Ljava/lang/Object;+341
+j  $Proxy0.libvlc_media_player_stop(Luk/co/caprica/vlcj/binding/internal/libvlc_media_player_t;)V+16
+j  uk.co.caprica.vlcj.player.DefaultMediaPlayer.stop()V+17
+j  br.com.fox.view.View$2.windowClosing(Ljava/awt/event/WindowEvent;)V+7
+j  java.awt.Window.processWindowEvent(Ljava/awt/event/WindowEvent;)V+68
+j  javax.swing.JFrame.processWindowEvent(Ljava/awt/event/WindowEvent;)V+2
+j  java.awt.Window.processEvent(Ljava/awt/AWTEvent;)V+69
+j  java.awt.Component.dispatchEventImpl(Ljava/awt/AWTEvent;)V+581
+j  java.awt.Container.dispatchEventImpl(Ljava/awt/AWTEvent;)V+42
+j  java.awt.Window.dispatchEventImpl(Ljava/awt/AWTEvent;)V+19
+j  java.awt.Component.dispatchEvent(Ljava/awt/AWTEvent;)V+2
+j  java.awt.EventQueue.dispatchEventImpl(Ljava/awt/AWTEvent;Ljava/lang/Object;)V+41
+j  java.awt.EventQueue.access$000(Ljava/awt/EventQueue;Ljava/awt/AWTEvent;Ljava/lang/Object;)V+3
+j  java.awt.EventQueue$3.run()Ljava/lang/Void;+12
+j  java.awt.EventQueue$3.run()Ljava/lang/Object;+1
+v  ~StubRoutines::call_stub
+j  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;+0
+j  java.security.ProtectionDomain$1.doIntersectionPrivilege(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;Ljava/security/AccessControlContext;)Ljava/lang/Object;+28
+j  java.security.ProtectionDomain$1.doIntersectionPrivilege(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;+6
+j  java.awt.EventQueue$4.run()Ljava/lang/Void;+11
+j  java.awt.EventQueue$4.run()Ljava/lang/Object;+1
+v  ~StubRoutines::call_stub
+j  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;+0
+j  java.security.ProtectionDomain$1.doIntersectionPrivilege(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;Ljava/security/AccessControlContext;)Ljava/lang/Object;+28
+j  java.awt.EventQueue.dispatchEvent(Ljava/awt/AWTEvent;)V+73
+j  java.awt.EventDispatchThread.pumpOneEventForFilters(I)Z+245
+j  java.awt.EventDispatchThread.pumpEventsForFilter(ILjava/awt/Conditional;Ljava/awt/EventFilter;)V+35
+j  java.awt.EventDispatchThread.pumpEventsForHierarchy(ILjava/awt/Conditional;Ljava/awt/Component;)V+11
+j  java.awt.EventDispatchThread.pumpEvents(ILjava/awt/Conditional;)V+4
+j  java.awt.EventDispatchThread.pumpEvents(Ljava/awt/Conditional;)V+3
+j  java.awt.EventDispatchThread.run()V+9
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x07959800 JavaThread "pool-5-thread-1" [_thread_blocked, id=14888, stack(0x0d180000,0x0d1d0000)]
+  0x07959000 JavaThread "TimerQueue" daemon [_thread_blocked, id=14672, stack(0x0d2b0000,0x0d300000)]
+  0x068b2800 JavaThread "Abandoned connection cleanup thread" daemon [_thread_blocked, id=13636, stack(0x05a70000,0x05ac0000)]
+  0x0250b000 JavaThread "DestroyJavaVM" [_thread_blocked, id=14276, stack(0x009e0000,0x00a30000)]
+=>0x04e10400 JavaThread "AWT-EventQueue-0" [_thread_in_native, id=12296, stack(0x05800000,0x05850000)]
+  0x04dd1400 JavaThread "AWT-Windows" daemon [_thread_in_native, id=12828, stack(0x05850000,0x058a0000)]
+  0x04dd1000 JavaThread "AWT-Shutdown" [_thread_blocked, id=7468, stack(0x056e0000,0x05730000)]
+  0x04dd0400 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=12624, stack(0x05730000,0x05780000)]
+  0x0244b400 JavaThread "Service Thread" daemon [_thread_blocked, id=14304, stack(0x04c10000,0x04c60000)]
+  0x02446400 JavaThread "C1 CompilerThread0" daemon [_thread_blocked, id=14300, stack(0x045e0000,0x04630000)]
+  0x02445000 JavaThread "Attach Listener" daemon [_thread_blocked, id=14296, stack(0x04a90000,0x04ae0000)]
+  0x02444000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=14292, stack(0x04970000,0x049c0000)]
+  0x0242c400 JavaThread "Finalizer" daemon [_thread_blocked, id=14288, stack(0x04830000,0x04880000)]
+  0x0242ac00 JavaThread "Reference Handler" daemon [_thread_blocked, id=14284, stack(0x024a0000,0x024f0000)]
+
+Other Threads:
+  0x02428400 VMThread [stack: 0x046d0000,0x04720000] [id=14280]
+  0x02459800 WatcherThread [stack: 0x04a00000,0x04a50000] [id=14308]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ def new generation   total 16576K, used 9602K [0x27010000, 0x28200000, 0x2c560000)
+  eden space 14784K,  52% used [0x27010000, 0x277b0978, 0x27e80000)
+  from space 1792K, 100% used [0x27e80000, 0x28040000, 0x28040000)
+  to   space 1792K,   0% used [0x28040000, 0x28040000, 0x28200000)
+ tenured generation   total 36640K, used 22711K [0x2c560000, 0x2e928000, 0x37010000)
+   the space 36640K,  61% used [0x2c560000, 0x2db8ddc0, 0x2db8de00, 0x2e928000)
+ compacting perm gen  total 12800K, used 12550K [0x37010000, 0x37c90000, 0x3b010000)
+   the space 12800K,  98% used [0x37010000, 0x37c51968, 0x37c51a00, 0x37c90000)
+    ro space 10240K,  45% used [0x3b010000, 0x3b492e40, 0x3b493000, 0x3ba10000)
+    rw space 12288K,  54% used [0x3ba10000, 0x3c0967b8, 0x3c096800, 0x3c610000)
+
+Code Cache  [0x02510000, 0x02728000, 0x04510000)
+ total_blobs=1080 nmethods=827 adapters=188 free_code_cache=30656Kb largest_free_block=31391552
+
+Dynamic libraries:
+0x00f30000 - 0x00f5e000 	C:\Program Files (x86)\Java\jdk1.7.0_03\bin\java.exe
+0x770b0000 - 0x77230000 	C:\Windows\SysWOW64\ntdll.dll
+0x74bb0000 - 0x74cc0000 	C:\Windows\syswow64\kernel32.dll
+0x75f30000 - 0x75f77000 	C:\Windows\syswow64\KERNELBASE.dll
+0x74980000 - 0x749b4000 	C:\Program Files\AVAST Software\Avast\snxhk.dll
+0x75de0000 - 0x75e80000 	C:\Windows\syswow64\ADVAPI32.dll
+0x75660000 - 0x7570c000 	C:\Windows\syswow64\msvcrt.dll
+0x76c90000 - 0x76ca9000 	C:\Windows\SysWOW64\sechost.dll
+0x74f20000 - 0x75010000 	C:\Windows\syswow64\RPCRT4.dll
+0x74ad0000 - 0x74b30000 	C:\Windows\syswow64\SspiCli.dll
+0x74ac0000 - 0x74acc000 	C:\Windows\syswow64\CRYPTBASE.dll
+0x74cc0000 - 0x74dc0000 	C:\Windows\syswow64\USER32.dll
+0x75c80000 - 0x75d10000 	C:\Windows\syswow64\GDI32.dll
+0x75710000 - 0x7571a000 	C:\Windows\syswow64\LPK.dll
+0x75d20000 - 0x75dbd000 	C:\Windows\syswow64\USP10.dll
+0x71090000 - 0x7122e000 	C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7601.17514_none_41e6975e2bd6f2b2\COMCTL32.dll
+0x76c30000 - 0x76c87000 	C:\Windows\syswow64\SHLWAPI.dll
+0x75010000 - 0x75070000 	C:\Windows\system32\IMM32.DLL
+0x75090000 - 0x7515c000 	C:\Windows\syswow64\MSCTF.dll
+0x748d0000 - 0x7490a000 	C:\Windows\SysWOW64\nvinit.dll
+0x0f000000 - 0x0f006000 	C:\Program Files (x86)\NVIDIA Corporation\CoProcManager\_etoured.dll
+0x714a0000 - 0x714eb000 	C:\Program Files (x86)\NVIDIA Corporation\CoProcManager\nvd3d9wrap.dll
+0x752a0000 - 0x7543d000 	C:\Windows\syswow64\SETUPAPI.dll
+0x76bd0000 - 0x76bf7000 	C:\Windows\syswow64\CFGMGR32.dll
+0x75ea0000 - 0x75f2f000 	C:\Windows\syswow64\OLEAUT32.dll
+0x74dc0000 - 0x74f1c000 	C:\Windows\syswow64\ole32.dll
+0x75dc0000 - 0x75dd2000 	C:\Windows\syswow64\DEVOBJ.dll
+0x71460000 - 0x71493000 	C:\Program Files (x86)\NVIDIA Corporation\CoProcManager\nvdxgiwrap.dll
+0x60900000 - 0x609be000 	C:\Program Files (x86)\Java\jdk1.7.0_03\jre\bin\msvcr100.dll
+0x609c0000 - 0x60ce8000 	C:\Program Files (x86)\Java\jdk1.7.0_03\jre\bin\client\jvm.dll
+0x730a0000 - 0x730a7000 	C:\Windows\system32\WSOCK32.dll
+0x75790000 - 0x757c5000 	C:\Windows\syswow64\WS2_32.dll
+0x75e90000 - 0x75e96000 	C:\Windows\syswow64\NSI.dll
+0x73340000 - 0x73372000 	C:\Windows\system32\WINMM.dll
+0x75070000 - 0x75075000 	C:\Windows\syswow64\PSAPI.DLL
+0x71300000 - 0x7130c000 	C:\Program Files (x86)\Java\jdk1.7.0_03\jre\bin\verify.dll
+0x6eb70000 - 0x6eb90000 	C:\Program Files (x86)\Java\jdk1.7.0_03\jre\bin\java.dll
+0x6f990000 - 0x6f9a3000 	C:\Program Files (x86)\Java\jdk1.7.0_03\jre\bin\zip.dll
+0x60500000 - 0x60642000 	C:\Program Files (x86)\Java\jdk1.7.0_03\jre\bin\awt.dll
+0x74850000 - 0x74866000 	C:\Windows\system32\CRYPTSP.dll
+0x74810000 - 0x7484b000 	C:\Windows\system32\rsaenh.dll
+0x73070000 - 0x73087000 	C:\Windows\system32\USERENV.dll
+0x73060000 - 0x7306b000 	C:\Windows\system32\profapi.dll
+0x608a0000 - 0x608b4000 	C:\Program Files (x86)\Java\jdk1.7.0_03\jre\bin\net.dll
+0x70970000 - 0x709ac000 	C:\Windows\system32\mswsock.dll
+0x6b330000 - 0x6b336000 	C:\Windows\System32\wship6.dll
+0x63f30000 - 0x63f40000 	C:\Windows\system32\NLAapi.dll
+0x64da0000 - 0x64db0000 	C:\Windows\system32\napinsp.dll
+0x64b70000 - 0x64b82000 	C:\Windows\system32\pnrpnsp.dll
+0x708a0000 - 0x708e4000 	C:\Windows\system32\DNSAPI.dll
+0x64ef0000 - 0x64ef8000 	C:\Windows\System32\winrnr.dll
+0x64b00000 - 0x64b0d000 	C:\Windows\system32\wshbth.dll
+0x64ad0000 - 0x64af7000 	C:\Program Files (x86)\Common Files\Microsoft Shared\Windows Live\WLIDNSP.DLL
+0x71830000 - 0x71835000 	C:\Windows\System32\wshtcpip.dll
+0x71290000 - 0x712ac000 	C:\Windows\system32\IPHLPAPI.DLL
+0x71280000 - 0x71287000 	C:\Windows\system32\WINNSI.DLL
+0x64ac0000 - 0x64ac6000 	C:\Windows\system32\rasadhlp.dll
+0x64a80000 - 0x64ab8000 	C:\Windows\System32\fwpuclnt.dll
+0x73320000 - 0x7332f000 	C:\Program Files (x86)\Java\jdk1.7.0_03\jre\bin\nio.dll
+0x10000000 - 0x10072000 	C:\Users\Felipe\AppData\Local\Temp\jna\jna7545391974327418743.dll
+0x604d0000 - 0x604fc000 	C:\Program Files (x86)\VideoLAN\VLC\libvlc.dll
+0x60280000 - 0x604cd000 	C:\Program Files (x86)\VideoLAN\VLC\libvlccore.dll
+0x75f80000 - 0x76bca000 	C:\Windows\syswow64\SHELL32.DLL
+0x713e0000 - 0x71460000 	C:\Windows\system32\uxtheme.dll
+0x00390000 - 0x0039e000 	C:\Program Files (x86)\Iminent\Iminent.WinCore.dll
+0x74970000 - 0x74979000 	C:\Windows\system32\VERSION.dll
+0x71cb0000 - 0x71cc3000 	C:\Windows\system32\dwmapi.dll
+0x60870000 - 0x6089a000 	C:\Program Files (x86)\Java\jdk1.7.0_03\jre\bin\fontmanager.dll
+0x60090000 - 0x600b0000 	C:\Program Files (x86)\Java\jdk1.7.0_03\jre\bin\sunec.dll
+0x75210000 - 0x75293000 	C:\Windows\syswow64\CLBCatQ.DLL
+0x5fff0000 - 0x6003c000 	C:\Program Files (x86)\VideoLAN\VLC\plugins\access\libdshow_plugin.dll
+0x60050000 - 0x6006c000 	C:\Program Files (x86)\VideoLAN\VLC\plugins\audio_output\libaout_directx_plugin.dll
+0x5ffd0000 - 0x5ffed000 	C:\Program Files (x86)\VideoLAN\VLC\plugins\audio_output\libwaveout_plugin.dll
+0x6a360000 - 0x6a3d2000 	C:\Windows\system32\dsound.dll
+0x6b340000 - 0x6b365000 	C:\Windows\system32\POWRPROF.dll
+0x550c0000 - 0x55ba9000 	C:\Program Files (x86)\VideoLAN\VLC\plugins\gui\libqt4_plugin.dll
+0x74b30000 - 0x74bab000 	C:\Windows\syswow64\COMDLG32.DLL
+0x74910000 - 0x74961000 	C:\Windows\system32\WINSPOOL.DRV
+0x5fe80000 - 0x5ffc2000 	C:\Program Files (x86)\VideoLAN\VLC\plugins\misc\libxml_plugin.dll
+0x5fe20000 - 0x5fe44000 	C:\Program Files (x86)\VideoLAN\VLC\plugins\video_output\libdirectx_plugin.dll
+0x5fe60000 - 0x5fe79000 	C:\Program Files (x86)\VideoLAN\VLC\plugins\mmxext\libmemcpymmxext_plugin.dll
+0x5fe00000 - 0x5fe1d000 	C:\Program Files (x86)\VideoLAN\VLC\plugins\control\libhotkeys_plugin.dll
+0x63f40000 - 0x63f46000 	C:\Program Files (x86)\Java\jdk1.7.0_03\jre\bin\jawt.dll
+0x5fdd0000 - 0x5fdf6000 	C:\Program Files (x86)\VideoLAN\VLC\plugins\access\libaccess_http_plugin.dll
+0x5fdb0000 - 0x5fdca000 	C:\Program Files (x86)\VideoLAN\VLC\plugins\stream_out\libstream_out_duplicate_plugin.dll
+0x5fd90000 - 0x5fdab000 	C:\Program Files (x86)\VideoLAN\VLC\plugins\stream_out\libstream_out_standard_plugin.dll
+0x5fd70000 - 0x5fd89000 	C:\Program Files (x86)\VideoLAN\VLC\plugins\access_output\libaccess_output_file_plugin.dll
+0x54390000 - 0x550b1000 	C:\Program Files (x86)\VideoLAN\VLC\plugins\codec\libavcodec_plugin.dll
+0x5fd40000 - 0x5fd61000 	C:\Program Files (x86)\VideoLAN\VLC\plugins\stream_out\libstream_out_transcode_plugin.dll
+0x60830000 - 0x60861000 	C:\Program Files (x86)\Java\jdk1.7.0_03\jre\bin\t2k.dll
+0x5fcc0000 - 0x5fd3c000 	C:\Program Files (x86)\VideoLAN\VLC\plugins\stream_filter\libstream_filter_httplive_plugin.dll
+0x5fc10000 - 0x5fcc0000 	C:\Program Files (x86)\VideoLAN\VLC\plugins\stream_filter\libstream_filter_dash_plugin.dll
+0x5fbf0000 - 0x5fc0a000 	C:\Program Files (x86)\VideoLAN\VLC\plugins\access\libstream_filter_rar_plugin.dll
+0x5e200000 - 0x5e225000 	C:\Program Files (x86)\VideoLAN\VLC\plugins\access\libzip_plugin.dll
+0x5fbd0000 - 0x5fbe9000 	C:\Program Files (x86)\VideoLAN\VLC\plugins\stream_filter\libstream_filter_record_plugin.dll
+0x5e1c0000 - 0x5e200000 	C:\Program Files (x86)\VideoLAN\VLC\plugins\demux\libmp4_plugin.dll
+0x5e190000 - 0x5e1b5000 	C:\Program Files (x86)\VideoLAN\VLC\plugins\demux\libavi_plugin.dll
+0x5e160000 - 0x5e182000 	C:\Program Files (x86)\VideoLAN\VLC\plugins\demux\libasf_plugin.dll
+0x5f7c0000 - 0x5f7db000 	C:\Program Files (x86)\VideoLAN\VLC\plugins\demux\libflacsys_plugin.dll
+0x5e140000 - 0x5e15b000 	C:\Program Files (x86)\VideoLAN\VLC\plugins\demux\libes_plugin.dll
+0x607d0000 - 0x607f4000 	C:\Program Files (x86)\Java\jdk1.7.0_03\jre\bin\dcpr.dll
+0x5e110000 - 0x5e137000 	C:\Program Files (x86)\VideoLAN\VLC\plugins\demux\libmpc_plugin.dll
+0x5c330000 - 0x5c34b000 	C:\Program Files (x86)\VideoLAN\VLC\plugins\demux\libnuv_plugin.dll
+0x5c310000 - 0x5c32a000 	C:\Program Files (x86)\VideoLAN\VLC\plugins\demux\libtta_plugin.dll
+0x5c2f0000 - 0x5c30b000 	C:\Program Files (x86)\VideoLAN\VLC\plugins\demux\libwav_plugin.dll
+0x5c200000 - 0x5c2eb000 	C:\Program Files (x86)\VideoLAN\VLC\plugins\demux\libsid_plugin.dll
+0x5c1d0000 - 0x5c1f5000 	C:\Program Files (x86)\VideoLAN\VLC\plugins\services_discovery\libsap_plugin.dll
+0x5c0a0000 - 0x5c1c8000 	C:\Program Files (x86)\VideoLAN\VLC\plugins\demux\libmkv_plugin.dll
+0x5bfe0000 - 0x5c096000 	C:\Program Files (x86)\VideoLAN\VLC\plugins\demux\liblive555_plugin.dll
+0x5bfb0000 - 0x5bfdb000 	C:\Program Files (x86)\VideoLAN\VLC\plugins\demux\libogg_plugin.dll
+0x5bf90000 - 0x5bfa9000 	C:\Program Files (x86)\VideoLAN\VLC\plugins\demux\libdirac_plugin.dll
+0x5bf70000 - 0x5bf8a000 	C:\Program Files (x86)\VideoLAN\VLC\plugins\demux\libsmf_plugin.dll
+0x5bf40000 - 0x5bf6a000 	C:\Program Files (x86)\VideoLAN\VLC\plugins\demux\libplaylist_plugin.dll
+0x5bf20000 - 0x5bf3a000 	C:\Program Files (x86)\VideoLAN\VLC\plugins\demux\librawvid_plugin.dll
+0x5bf00000 - 0x5bf1a000 	C:\Program Files (x86)\VideoLAN\VLC\plugins\demux\libpva_plugin.dll
+0x5bed0000 - 0x5beff000 	C:\Program Files (x86)\VideoLAN\VLC\plugins\demux\libts_plugin.dll
+0x5beb0000 - 0x5beca000 	C:\Program Files (x86)\VideoLAN\VLC\plugins\demux\libnsv_plugin.dll
+0x5be90000 - 0x5bea9000 	C:\Program Files (x86)\VideoLAN\VLC\plugins\demux\libau_plugin.dll
+0x5be20000 - 0x5be8f000 	C:\Program Files (x86)\VideoLAN\VLC\plugins\demux\libgme_plugin.dll
+0x5be00000 - 0x5be1a000 	C:\Program Files (x86)\VideoLAN\VLC\plugins\demux\libvoc_plugin.dll
+0x5bde0000 - 0x5bdf9000 	C:\Program Files (x86)\VideoLAN\VLC\plugins\demux\libxa_plugin.dll
+0x5bcd0000 - 0x5bddd000 	C:\Program Files (x86)\VideoLAN\VLC\plugins\demux\libmod_plugin.dll
+0x5bcb0000 - 0x5bcca000 	C:\Program Files (x86)\VideoLAN\VLC\plugins\demux\libaiff_plugin.dll
+0x5bc90000 - 0x5bcab000 	C:\Program Files (x86)\VideoLAN\VLC\plugins\demux\libimage_plugin.dll
+0x5bc70000 - 0x5bc8e000 	C:\Program Files (x86)\VideoLAN\VLC\plugins\demux\libps_plugin.dll
+0x5bc50000 - 0x5bc6f000 	C:\Program Files (x86)\VideoLAN\VLC\plugins\demux\libty_plugin.dll
+0x5bc30000 - 0x5bc49000 	C:\Program Files (x86)\VideoLAN\VLC\plugins\demux\libmpgv_plugin.dll
+0x5bc10000 - 0x5bc2a000 	C:\Program Files (x86)\VideoLAN\VLC\plugins\demux\libmjpeg_plugin.dll
+
+VM Arguments:
+jvm_args: -Dfile.encoding=UTF-8 
+java_command: br.com.fox.view.View 201.56.75.2 15 984
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files (x86)\Java\jdk1.7.0_03\jre
+PATH=C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Embarcadero\RAD Studio\9.0\bin;C:\Users\Public\Documents\RAD Studio\9.0\Bpl;C:\Program Files (x86)\Embarcadero\RAD Studio\9.0\bin64;C:\Users\Public\Documents\RAD Studio\9.0\Bpl\Win64;C:\Program Files (x86)\CollabNet\Subversion Client;C:\Program Files (x86)\Embarcadero\RAD Studio\8.0\bin;C:\Users\Public\Documents\RAD Studio\8.0\Bpl;C:\Program Files\Common Files\Microsoft Shared\Windows Live;C:\Program Files (x86)\Common Files\Microsoft Shared\Windows Live;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\Windows Live\Shared;C:\Program Files (x86)\Common Files\Roxio Shared\OEM\DLLShared\;C:\Program Files (x86)\Common Files\Roxio Shared\OEM\DLLShared\;C:\Program Files (x86)\Common Files\Roxio Shared\OEM\12.0\DLLShared\;C:\Program Files (x86)\Roxio\OEM\AudioCore\;C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\DTS\Binn\;C:\PROGRA~2\Borland\Delphi6\Bin;C:\PROGRA~2\Borland\Delphi6\Projects\Bpl;C:\Program Files\TortoiseSVN\bin;C:\OpenCV\opencv\build\x86\vc10\bin;C:\OpenCV\opencv\build\x86\vc9\bin;C:\OpenCV\opencv\build\x86\mingw\bin;C:\OpenCV\opencv\build\x64\mingw\bin;C:\OpenCV\opencv\build\x64\vc9\bin;C:\OpenCV\opencv\build\x64\vc10\bin;C:\OpenCV\opencv\build\common\tbb\ia32\vc9;C:\OpenCV\opencv\build\common\tbb\ia32\vc10;C:\Users\Felipe\Meus Arquivos\Programação\Java\hsqldb\lib;C:\Program Files\MATLAB\R2011a\runtime\win64;C:\Program Files\MATLAB\R2011a\bin;C:\OpenCV\OpenCV244\opencv\build\x86\vc10\bin;C:\Program Files (x86)\SlikSvn\bin;C:\Felipe\Programação\Java\Bibliotecas\apache-maven-3.0.5\bin;C:\Program Files (x86)\Tesseract-OCR;.;;.;
+USERNAME=Felipe
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 42 Stepping 7, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 , 64 bit Build 7601 Service Pack 1
+
+CPU:total 8 (4 cores per cpu, 2 threads per core) family 6 model 42 stepping 7, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, ht
+
+Memory: 4k page, physical 8280236k(4733492k free), swap 16558608k(12381744k free)
+
+vm_info: Java HotSpot(TM) Client VM (22.1-b02) for windows-x86 JRE (1.7.0_03-b05), built on Feb  3 2012 20:43:37 by "java_re" with unknown MS VC++:1600
+
+time: Sun Dec 01 14:07:26 2013
+elapsed time: 102 seconds
+
